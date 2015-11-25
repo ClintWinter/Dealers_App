@@ -18,7 +18,7 @@ jQuery(document).ready(function() {
     */
     $('.registration-form fieldset:first-child').fadeIn('slow');
     
-    $('.registration-form input[type="text"], .registration-form input[type="password"], .registration-form textarea').on('focus', function() {
+    $('.registration-form input[type="text"]').on('focus', function() {
     	$(this).removeClass('input-error');
     });
     
@@ -27,13 +27,14 @@ jQuery(document).ready(function() {
     	var parent_fieldset = $(this).parents('fieldset');
     	var next_step = true;
     	
-    	parent_fieldset.find('input[type="text"], input[type="password"], textarea').each(function() {
+    	parent_fieldset.find('.not-optional').each(function() {
     		if( $(this).val() == "" ) {
     			$(this).addClass('input-error');
     			next_step = false;
-    		}
-    		else {
+                $('.error').html("One of the required fields is not filled out!");
+            } else {
     			$(this).removeClass('input-error');
+                $('.error').html("");
     		}
     	});
     	
@@ -55,13 +56,16 @@ jQuery(document).ready(function() {
     // submit
     $('.registration-form').on('submit', function(e) {
     	
-    	$(this).find('input[type="text"], input[type="password"], textarea').each(function() {
+    	$(this).find('.not-optional').each(function() {
     		if( $(this).val() == "" ) {
     			e.preventDefault();
     			$(this).addClass('input-error');
+                $('.error').html("One of the required fields is not filled out!");
+
     		}
     		else {
     			$(this).removeClass('input-error');
+                $('.error').html("");
     		}
     	});
     	
