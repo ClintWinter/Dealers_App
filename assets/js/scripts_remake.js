@@ -10,12 +10,12 @@ $(document).ready(function() {
     	$.backstretch("resize");
     });
 
-    // email-form
+        // email-form
     $('.email-form fieldset').fadeIn('slow');
 
     $('#email').focus();
 
-    // validate email
+        // validate email
     $('.email-form').validate();
 
 
@@ -31,10 +31,25 @@ $(document).ready(function() {
 
     });
 
+    //
+    //
+    //
+    //
+    //
+    // NEED NEXT BUTTON TO VALIDATE BEFORE GOING TO PAGE 2
+    // NEED PREVIOUS BUTTON TO KEEP ERROR MESSAGES FROM PREVIOUS PAGE
+    //
+    //
+    //
+    //
+    //
+    //
+
     // registration-form validate
 	$("#registrationForm").validate({
 		success: function(label) {
-    label.addClass("valid").text("Ok!"),
+    label.addClass("valid").text("Ok!")
+		},
     	rules: {
     		business: "required",
     		contact: "required",
@@ -81,6 +96,14 @@ $(document).ready(function() {
     	}
     });
 
+	/*
+	$('.form-control').on('blur', function() {
+		if ($(this).val() == "") {
+			$(this).addClass("error");
+			$(this).attr("aria-invalid", true);
+		}
+	});
+	*/
 
 
     // Next
@@ -88,11 +111,11 @@ $(document).ready(function() {
     	var parent_fieldset = $(this).parents('fieldset');
     	var next_step = true;
     	
-    	parent_fieldset.find(".form-control:not('.not-required')").each(function() {
+    	parent_fieldset.find('.form-control:not(.not-required)').each(function() {
     		if( $(this).val() == "" ) {
     			$(this).addClass('input-error');
     			next_step = false;
-                $('.error').html("One of the required fields is not filled out!");
+                $('.error').html("At least one of the required fields is not filled out!");
             } else {
     			$(this).removeClass('input-error');
                 $('.error').html("");
