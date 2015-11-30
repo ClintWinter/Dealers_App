@@ -86,13 +86,12 @@
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3 form-box">
                         	
-                        	<!-- FORM START -->
-                        	<form role="form" action="" method="post" class="registration-form">
-                        		
+                        	<!-- email & account type form -->
+                        	<form role="form" action="" method="post" class="email-form">
                         		<fieldset>
 		                        	<div class="form-top">
 		                        		<div class="form-top-left">
-		                        			<h3>Step 1 / 3</h3>
+		                        			<h3>1 of 3</h3>
 		                            		<p>Email & Account Type:</p>
 		                        		</div>
 		                        		<div class="form-top-right">
@@ -101,25 +100,36 @@
 		                            </div>
 		                            <div class="form-bottom">
 				                    	<div class="form-group">
-				                        	<label class="sr-only" for="form-email">Email</label>
-				                        	<input type="email" name="form-email" placeholder="Email..." class="form-email form-control not-optional" id="form-email" required>
+				                    		<p>
+				                        	<label class="sr-only" for="email">Email</label>
+				                        	<input type="email" name="email" placeholder="Email..." class="email form-control" id="form-email" required>
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
+				                        	<p>
+				                        	<label class="sr-only" for="form-account-type">Account Type</label>
 				                        	<select name="form-account-type">
 				                        		<option value="credit-card">Credit Card</option>
 				                        		<option value="cod">Cash on Delivery</option>
 				                        		<option value="net-15">Net 15</option>
 				                        	</select>
+				                        	</p>
 				                        </div>
-				                        <h4 class="error"></h4>
-				                        <button type="button" class="btn btn-next">Next</button>
+				                        <button type="submit" class="btn btn-primary start-now">Start Now</button>
 				                    </div>
-			                    </fieldset>
-			                    
+				                </fieldset>
+				            </form>
+
+
+
+
+
+				            <!-- credit card form -->
+				            <form role="form" action="" method="post" class="registration-form" id="registrationForm">
 			                    <fieldset>
 		                        	<div class="form-top">
 		                        		<div class="form-top-left">
-		                        			<h3>Step 2 / 3</h3>
+		                        			<h3>2 of 3</h3>
 		                        		</div>
 		                        		<div class="form-top-right">
 		                        			<i class="fa fa-building-o"></i>
@@ -127,30 +137,34 @@
 		                            </div>
 		                            <div class="form-bottom">
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-business">Business Name</label>
-				                        	<input type="text" name="form-business" placeholder="Business Name..." class="form-business form-control not-optional" id="form-business">
+				                        	<p>
+				                        	<label class="sr-only" for="business">Business Name</label>
+				                        	<input type="text" name="business" placeholder="Business Name..." class="business form-control" id="business">
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                    		<label class="sr-only" for="form-contact">Contact Name</label>
-				                        	<input type="text" name="form-contact" placeholder="Contact Name..." class="form-contact form-control not-optional" id="form-contact">
+				                        	<p>
+				                    		<label class="sr-only" for="contact">Contact Name</label>
+				                        	<input type="text" name="contact" placeholder="Contact Name..." class="contact form-control" id="contact">
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-address">Address</label>
-				                        	<input type="text" name="form-address" placeholder="Address..." 
-				                        				class="form-address form-control not-optional" id="form-address">
+				                        	<p>
+				                        	<label class="sr-only" for="address">Address</label>
+				                        	<input type="text" name="address" placeholder="Address..." 
+				                        				class="address form-control" id="address">
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-city">City</label>
-				                        	<input type="text" name="form-city" placeholder="City..." 
-				                        				class="form-city form-control not-optional" id="form-city">
-				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-address">Address</label>
-				                        	<input type="text" name="form-address" placeholder="Address..." 
-				                        				class="form-address form-control not-optional" id="form-address">
+				                        	<p>
+				                        	<label class="sr-only" for="city">City</label>
+				                        	<input type="text" name="city" placeholder="City..." 
+				                        				class="city form-control " id="city">
+				                        	</p>
 				                        </div>
 				                        <p>Country:</p>
 				                        <div class="form-group">
+				                        	<p>
 				                        	<select name="country">
 					                        	<option value="AFG">Afghanistan</option>
 												<option value="ALA">Åland Islands</option>
@@ -402,9 +416,11 @@
 												<option value="ZMB">Zambia</option>
 												<option value="ZWE">Zimbabwe</option>
 				                        	</select>
+				                        	</p>
 				                        </div>
 				                        <p>State:</p>
 				                        <div class="form-group">
+				                        	<p>
 				                        	<select name="state">
 				                        		<option value="AL">Alabama</option>
 												<option value="AK">Alaska</option>
@@ -458,24 +474,30 @@
 												<option value="WI">Wisconsin</option>
 												<option value="WY">Wyoming</option>
 				                        	</select>
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-zipcode">zipcode</label>
-				                        	<input type="text" name="form-zipcode" placeholder="Zip Code..." 
-				                        				class="form-zipcode form-control not-optional" id="form-zipcode">
+				                        	<p>
+				                        	<label class="sr-only" for="zipcode">zipcode</label>
+				                        	<input type="text" name="zipcode" placeholder="Zip Code..." 
+				                        				class="zipcode form-control" id="zipcode">
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-phone">Phone</label>
-				                        	<input type="text" name="form-phone" placeholder="Phone number..." 
-				                        				class="form-phone form-control not-optional" id="form-phone">
+				                        	<p>
+				                        	<label class="sr-only" for="phone">Phone</label>
+				                        	<input type="text" name="phone" placeholder="Phone number..." 
+				                        				class="phone form-control" id="phone">
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-fax">Fax</label>
-				                        	<input type="text" name="form-fax" placeholder="Fax number..." 
-				                        				class="form-fax form-control optional" id="form-fax">
+				                        	<p>
+				                        	<label class="sr-only" for="fax">Fax</label>
+				                        	<input type="text" name="fax" placeholder="Fax number..." 
+				                        				class="fax form-control not-required" id="fax">
+				                        	</p>
 				                        </div>
 				                        <h4 class="error"></h4>
-				                        <button type="button" class="btn btn-previous">Previous</button>
 				                        <button type="button" class="btn btn-next">Next</button>
 				                    </div>
 			                    </fieldset>
@@ -483,7 +505,7 @@
 			                    <fieldset>
 		                        	<div class="form-top">
 		                        		<div class="form-top-left">
-		                        			<h3>Step 3 / 3</h3>
+		                        			<h3>3 of 3</h3>
 		                        		</div>
 		                        		<div class="form-top-right">
 		                        			<i class="fa fa-building-o"></i>
@@ -492,58 +514,80 @@
 		                            <div class="form-bottom">
 				                    	<div class="form-group">
 				                    		<p>Ownership</p>
+				                    		<p>
 				                        	<select name="form-ownership">
 				                        		<option value="sole-proprietorship">Sole Proprietorship</option>
 				                        		<option value="partnership">Partnership</option>
 				                        		<option value="corporation">Corporation</option>
 				                        		<option value="other">Other</option>
 				                        	</select>
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-principal">Principal Name</label>
-				                        	<input type="text" name="form-principal" placeholder="Principal Name..." class="form-principal form-control not-optional" id="form-principal">
+				                        	<p>
+				                        	<label class="sr-only" for="principal">Principal Name</label>
+				                        	<input type="text" name="principal" placeholder="Principal Name..." class="principal form-control" id="principal">
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-title">Title</label>
-				                        	<input type="text" name="form-title" placeholder="Title..." class="form-title form-control not-optional" id="form-title">
+				                        	<p>
+				                        	<label class="sr-only" for="title">Title</label>
+				                        	<input type="text" name="title" placeholder="Title..." class="title form-control not-optional" id="title">
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-principal2">Principal Name</label>
-				                        	<input type="text" name="form-principal2" placeholder="Principal Name..." class="form-principal2 form-control optional" id="form-principal2">
+				                        	<p>
+				                        	<label class="sr-only" for="principal2">Principal Name</label>
+				                        	<input type="text" name="principal2" placeholder="Principal Name..." class="principal2 form-control" id="principal2">
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-title2">Title</label>
-				                        	<input type="text" name="form-title2" placeholder="Title..." class="form-title2 form-control optional" id="form-title2">
+				                        	<p>
+				                        	<label class="sr-only" for="title2">Title</label>
+				                        	<input type="text" name="title2" placeholder="Title..." class="title2 form-control" id="title2">
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
 				                        	<p>Has the firm or any of its principles filed for bankruptcy?</p>
-				                        	<select name="form-ownership">
-				                        		<option value="bankruptcy-yes">Yes</option>
+				                        	<p>
+				                        	<select id="bankruptcy" name="bankruptcy">
+				                        		<option id="bankruptcy-yes" value="bankruptcy-yes">Yes</option>
 				                        		<option value="bankruptcy-no">No</option>
 				                        	</select>
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-explanation">Explanation</label>
-				                        	<input type="text" name="form-explanation" placeholder="If yes, please explain..." class="form-explanation form-control optional" id="form-explanation">
+				                        	<p>
+				                        	<label class="sr-only" for="explanation">Explanation</label>
+				                        	<input type="text" name="explanation" placeholder="If yes, please explain..." class="explanation form-control" id="explanation">
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-employees">Number of Employees</label>
-				                        	<input type="text" name="form-employees" placeholder="Number of employees..." class="form-employees form-control not-optional" id="form-epmloyees">
+				                        	<p>
+				                        	<label class="sr-only" for="employees">Number of Employees</label>
+				                        	<input type="text" name="employees" placeholder="Number of employees..." class="employees form-control" id="employees">
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-sales">Annual Sales</label>
-				                        	<input type="text" name="form-sales" placeholder="Annual Sales..." class="form-sales form-control not-optional" id="form-sales">
+				                        	<p>
+				                        	<label class="sr-only" for="sales">Annual Sales</label>
+				                        	<input type="text" name="sales" placeholder="Annual Sales..." class="sales form-control" id="sales">
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
 				                        	<p>Do you have a website?</p>
-				                        	<select name="form-website">
-				                        		<option value="website-yes">Yes</option>
+				                        	<p>
+				                        	<select id="website" name="website">
+				                        		<option id="website-yes" value="website-yes">Yes</option>
 				                        		<option value="website-no">No</option>
 				                        	</select>
+				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-url">URL</label>
-				                        	<input type="text" name="form-url" placeholder="If yes, list URL..." class="form-url form-control optional" id="form-url">
+				                        	<p>
+				                        	<label class="sr-only" for="url">URL</label>
+				                        	<input type="url" name="url" placeholder="If yes, list URL..." class="url form-control" id="url">
+				                        	</p>
 				                        </div>
 				                        <h4 class="error"></h4>
 				                        <button type="button" class="btn btn-previous">Previous</button>
@@ -551,9 +595,7 @@
 
 				                    </div>
 			                    </fieldset>
-		                    
 		                    </form>
-		                    <!-- FORM END -->
 		                    
                         </div>
                     </div>
@@ -568,7 +610,9 @@
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>
         <script src="assets/js/retina-1.1.0.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
+        <script src="assets/js/jquery-validation-1.14.0/dist/jquery.validate.js"></script>
+        <script src="assets/js/scripts_remake.js"></script>
+
         
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>

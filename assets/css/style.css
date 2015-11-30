@@ -184,6 +184,10 @@ form .form-bottom .input-error {
 	border-color: #d00000;
 }
 
+form.email-form fieldset {
+	display: none;
+}
+
 form.registration-form fieldset {
 	display: none;
 }
@@ -192,6 +196,13 @@ form .error {
 	color: #d00000;
 }
 
+form .emailError {
+	color:; #d00000;
+}
+
+form .valid {
+	color: rgb(0,200,50);
+}
 
 /***** Media queries *****/
 
