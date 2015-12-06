@@ -192,8 +192,9 @@ form.registration-form fieldset {
 	display: none;
 }
 
-form .error {
+form .next-error {
 	color: #d00000;
+	font-weight: 400;
 }
 
 form .emailError {
@@ -202,6 +203,10 @@ form .emailError {
 
 form .valid {
 	color: rgb(0,200,50);
+}
+
+form .error {
+	color: rgb(200,0,0);
 }
 
 /***** Media queries *****/
