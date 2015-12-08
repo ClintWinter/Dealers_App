@@ -188,7 +188,15 @@ form.email-form fieldset {
 	display: none;
 }
 
-form.registration-form fieldset {
+form.creditCardForm fieldset {
+	display: none;
+}
+
+form.codForm fieldset {
+	display: none;
+}
+
+form.netForm fieldset {
 	display: none;
 }
 
@@ -208,6 +216,7 @@ form .valid {
 form .error {
 	color: rgb(200,0,0);
 }
+
 
 /***** Media queries *****/
 
