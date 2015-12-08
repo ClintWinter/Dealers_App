@@ -81,9 +81,20 @@ $(document).ready(function() {
 		}
 	});
 
+	// custom url validator
+	$.validator.addMethod("urlCheck", function(value, element) {
+		if ( $("#cc_website_yes").is(":selected") ) {
+			return /^[A-Za-z0-9_-]+\.+[A-Za-z0-9.\/%&=\?_:;-]+$/.test(value);
+		} else if ( $("#cc_website_yes").not(":selected") ) {
+			return true;
+		}
+	}, "Please enter a valid URL (example.com)");
+
 	// creditCardForm validate
 	$("#creditCardForm").validate({
     	rules: {
+
+    		// step 2
     		business: "required",
     		contact: "required",
     		address: "required",
@@ -100,25 +111,24 @@ $(document).ready(function() {
     			minlength: 10,
     			digits: true
     		},
+
+    		// step 3
+    		ownership: { valueNotEquals: "default" },
     		principal: "required",
     		title: "required",
-    		employees: {
-    			required: true,
-    			digits: true
-    		},
-    		sales: {
-    			required: true,
-    			digits: true
-    		},
+    		employees: { valueNotEquals: "default" },
+    		sales: { valueNotEquals: "default" },
+    		bankruptcy: { valueNotEquals: "default" },
     		explanation: {
-    			required: "#bankruptcy-yes:selected"
+    			required: "#bankruptcy_yes:selected"
     		},
-    		url: {
-    			required: "#website-yes:selected"
-    		},
+    		website: { valueNotEquals: "default" },
+    		cc_url: { urlCheck: true },
     		cc_BusinessType: { valueNotEquals: "default" }
     	},
     	messages: {
+
+    		// step 2
     		business: "Please enter the name of your business.",
     		contact: "Please enter your contact name.",
     		address: "Please enter your business's address.",
@@ -135,18 +145,17 @@ $(document).ready(function() {
     			minlength: "Please enter a 10-digit phone number(no dashes).",
     			digits: "Please use numbers only."
     		},
+
+    		// step 3
+    		ownership: { valueNotEquals: "Please select an ownership type." },
     		principal: "Please enter a principal.",
     		title: "Please enter a title.",
-    		employees: {
-    			required: "Please enter the number of employees.",
-    			digits: "Please use numbers only."
-    		},
-    		sales: {
-    			required: "Please enter last year's sales.",
-    			digits: "Please use numbers only."
-    		},
+    		employees: { valueNotEquals: "Please select an employee bracket." },
+    		sales: { valueNotEquals: "Please select a sales bracket." },
+    		bankruptcy: { valueNotEquals: "Please choose an option." },
     		explanation: "Please enter an explanation for claiming bankruptcy.",
-    		url: "Please enter a valid URL. (http://www.example.com)",
+    		website: { valueNotEquals: "Please choose an option." },
+    		cc_url: { urlCheck: "Please enter a valid URL(example.com)." },
     		cc_BusinessType: { valueNotEquals: "Please select an option." }
     	}
     });
@@ -191,12 +200,24 @@ $(document).ready(function() {
 			$(".cod_state_form").show();
 		} else if ( $("#cod_us").not(":selected") ) {
 			$(".cod_state_form").hide();
+			$(".cod_state_form2").hide();
 		}
 	});
+
+		// custom url validator
+	$.validator.addMethod("cod_urlCheck", function(value, element) {
+		if ( $("#cod_website_yes").is(":selected") ) {
+			return /^[A-Za-z0-9_-]+\.+[A-Za-z0-9.\/%&=\?_:;-]+$/.test(value);
+		} else if ( $("#cod_website_yes").not(":selected") ) {
+			return true;
+		}
+	}, "Please enter a valid URL (example.com)");
 
 	// codForm validate
 	$("#codForm").validate({
     	rules: {
+
+    		// step 2
     		cod_business: "required",
     		cod_contact: "required",
     		cod_address: "required",
@@ -213,28 +234,27 @@ $(document).ready(function() {
     			minlength: 10,
     			digits: true
     		},
+
+    		// step 3
+    		cod_ownership: { valueNotEquals: "default" },
     		cod_principal: "required",
     		cod_title: "required",
-    		cod_employees: {
-    			required: true,
-    			digits: true
-    		},
-    		cod_sales: {
-    			required: true,
-    			digits: true
-    		},
+    		cod_employees: { valueNotEquals: "default" },
+    		cod_sales: { valueNotEquals: "default" },
+    		cod_bankruptcy: { valueNotEquals: "default" },
     		cod_explanation: {
-    			required: "#cod_bankruptcy-yes:selected"
+    			required: "#cod_bankruptcy_yes:selected"
     		},
-    		cod_url: {
-    			required: "#cod_website-yes:selected"
-    		},
+    		cod_website: { valueNotEquals: "default" },
+    		cod_url: { cod_urlCheck: true },
     		cod_BusinessType: { valueNotEquals: "default" },
-    		cod_account_type: "required",
+
+    		// step 4
+    		cod_acct_type: { valueNotEquals: "default" },
     		cod_name: "required",
     		cod_address2: "required",
     		cod_city2: "required",
-    		cod_state2: { valueNotEquals: "cod_state_select2" },
+    		cod_state2: { codDblConditions: "cod_state_select2" },
     		cod_zipcode2: {
     			required: true,
     			minlength: 5,
@@ -251,6 +271,8 @@ $(document).ready(function() {
     		}
     	},
     	messages: {
+
+    		// step 2
     		cod_business: "Please enter the name of your business.",
     		cod_contact: "Please enter your contact name.",
     		cod_address: "Please enter your business's address.",
@@ -267,24 +289,25 @@ $(document).ready(function() {
     			minlength: "Please enter a 10-digit phone number(no dashes).",
     			digits: "Please use numbers only."
     		},
+
+    		// step 3
+    		cod_ownership: { valueNotEquals: "Please select an ownership type." },
     		cod_principal: "Please enter a principal.",
     		cod_title: "Please enter a title.",
-    		cod_employees: {
-    			required: "Please enter the number of employees.",
-    			digits: "Please use numbers only."
-    		},
-    		cod_sales: {
-    			required: "Please enter last year's sales.",
-    			digits: "Please use numbers only."
-    		},
+    		cod_employees: { valueNotEquals: "Please select an employee bracket." },
+    		cod_sales: { valueNotEquals: "Please select a sales bracket." },
+    		cod_bankruptcy: { valueNotEquals: "Please select an option." },
     		cod_explanation: "Please enter an explanation for claiming bankruptcy.",
-    		cod_url: "Please enter a valid URL. (http://www.example.com)",
+    		cod_website: { valueNotEquals: "Please select an option." },
+    		cod_url: { cod_urlCheck: "Please enter a valid URL(example.com)." },
     		cod_BusinessType: { valueNotEquals: "Please select an option." },
-    		cod_account_type: "Please select an account type.",
+
+    		// step 4
+    		cod_acct_type: { valueNotEquals: "Please select an account type." },
     		cod_name: "Plase enter your name.",
     		cod_address2: "Please enter your address.",
     		cod_city2: "Please enter your city",
-    		cod_state2: { valueNotEquals: "Please select a state." },
+    		cod_state2: { codDblConditions: "Please select a state." },
     		cod_zipcode2: {
     			required: "Please enter your zip code.",
     			minlength: "Please enter a 5-digit number.",
@@ -347,7 +370,16 @@ $(document).ready(function() {
 		}
 	});
 
-	// codForm validate
+	// custom url validator
+	$.validator.addMethod("net_urlCheck", function(value, element) {
+		if ( $("#net_website_yes").is(":selected") ) {
+			return /^[A-Za-z0-9_-]+\.+[A-Za-z0-9.\/%&=\?_:;-]+$/.test(value);
+		} else if ( $("#net_website_yes").not(":selected") ) {
+			return true;
+		}
+	}, "Please enter a valid URL (example.com)");
+
+	// netForm validate
 	$("#netForm").validate({
     	rules: {
 
@@ -370,22 +402,17 @@ $(document).ready(function() {
     		},
 
     		// step 3
+    		net_ownership: { valueNotEquals: "default" },
     		net_principal: "required",
     		net_title: "required",
-    		net_employees: {
-    			required: true,
-    			digits: true
-    		},
-    		net_sales: {
-    			required: true,
-    			digits: true
-    		},
+    		net_employees: { valueNotEquals: "default" },
+    		net_sales: { valueNotEquals: "default" },
+    		net_bankruptcy: { valueNotEquals: "default" },
     		net_explanation: {
-    			required: "#net_bankruptcy-yes:selected"
+    			required: "#net_bankruptcy_yes:selected"
     		},
-    		net_url: {
-    			required: "#net_website-yes:selected"
-    		},
+    		net_website: { valueNotEquals: "default" },
+    		net_url: { net_urlCheck: true },
     		net_BusinessType: { valueNotEquals: "default" },
 
     		// step 4
@@ -404,7 +431,7 @@ $(document).ready(function() {
     			digits: true
     		},
     		net_acct_ref1: {
-    			required: true,
+    			required: false,
     			digits: true
     		},
     		net_ref2: "required",
@@ -422,12 +449,12 @@ $(document).ready(function() {
     			digits: true
     		},
     		net_acct_ref2: {
-    			required: true,
+    			required: false,
     			digits: true
     		},
 
     		//step 5
-    		net_account_type3: "required",
+    		net_acct_type3: { valueNotEquals: "default"},
     		net_name3: "required",
     		net_address3: "required",
     		net_city3: "required",
@@ -447,7 +474,7 @@ $(document).ready(function() {
     			digits: true
     		},
 
-    		net_account_type4: "required",
+    		net_acct_type4: { valueNotEquals: "default"},
     		net_name4: "required",
     		net_address4: "required",
     		net_city4: "required",
@@ -488,18 +515,15 @@ $(document).ready(function() {
     		},
 
     		// step 3
+    		net_ownership: { valueNotEquals: "Please select an ownership type." },
     		net_principal: "Please enter a principal.",
     		net_title: "Please enter a title.",
-    		net_employees: {
-    			required: "Please enter the number of employees.",
-    			digits: "Please use numbers only."
-    		},
-    		net_sales: {
-    			required: "Please enter last year's sales.",
-    			digits: "Please use numbers only."
-    		},
+    		net_employees: { valueNotEquals: "Please select an employee bracket." },
+    		net_sales: { valueNotEquals: "Please select a sales bracket." },
+    		net_bankruptcy: { valueNotEquals: "Please select an option." },
     		net_explanation: "Please enter an explanation for claiming bankruptcy.",
-    		net_url: "Please enter a valid URL. (http://www.example.com)",
+    		net_website: { valueNotEquals: "Please select an option." },
+    		net_url: { net_urlCheck: "Please enter a valid URL(example.com)." },
     		net_BusinessType: { valueNotEquals: "Please select an option." },
 
     		// step 4
@@ -518,7 +542,6 @@ $(document).ready(function() {
     			digits: "Please use numbers only."
     		},
     		net_acct_ref1: {
-    			required: "Please enter reference 1's account number.",
     			digits: "Please use numbers only."
     		},
     		net_ref2: "Please enter a reference.",
@@ -536,12 +559,11 @@ $(document).ready(function() {
     			digits: "Please use numbers only."
     		},
     		net_acct_ref2: {
-    			required: "Please enter reference 2's account number.",
     			digits: "Please use numbers only."
     		},
 
     		// step 5
-    		net_acct_type3: "Please choose an account type.",
+    		net_acct_type3: { valueNotEquals: "Please choose an account type." },
     		net_name3: "Please enter a name.",
     		net_address3: "Please enter an address.",
     		net_city3: "Please enter a city.",
@@ -561,7 +583,7 @@ $(document).ready(function() {
     			digits: "Please use numbers only."
     		},
 
-    		net_acct_type4: "Please choose an account type.",
+    		net_acct_type4: { valueNotEquals: "Please choose an account type." },
     		net_name4: "Please enter a name.",
     		net_address4: "Please enter an address.",
     		net_city4: "Please enter a city.",

@@ -175,7 +175,7 @@
 				                        <div class="form-group">
 				                        	<p>
 				                        	<select id="country" name="country">
-				                        		<option id="country_select" value="country_select">Please select a country</option>
+				                        		<option id="country_select" value="country_select">Please select an option</option>
 					                        	<option value="AFG">Afghanistan</option>
 																		<option value="ALA">Åland Islands</option>
 																		<option value="ALB">Albania</option>
@@ -432,7 +432,7 @@
 				                        <div class="form-group state_form">
 				                        	<p>
 				                        	<select id="state" name="state">
-				                        		<option id= "state_select" value="state_select">Please select a state</option>
+				                        		<option id= "state_select" value="state_select">Please select an option</option>
 				                        		<option value="AL">Alabama</option>
 																		<option value="AK">Alaska</option>
 																		<option value="AZ">Arizona</option>
@@ -528,7 +528,8 @@
 				                    	<div class="form-group">
 				                    		<p>Ownership:</p>
 				                    		<p>
-				                        	<select name="form-ownership">
+				                        	<select name="ownership">
+				                        		<option id="cc_ownership" value="default">Please select an option</option>
 				                        		<option value="sole-proprietorship">Sole Proprietorship</option>
 				                        		<option value="partnership">Partnership</option>
 				                        		<option value="corporation">Corporation</option>
@@ -564,8 +565,9 @@
 				                        	<p>Has the firm or any of its principles filed for bankruptcy?</p>
 				                        	<p>
 				                        	<select id="bankruptcy" name="bankruptcy">
-				                        		<option id="bankruptcy-yes" value="bankruptcy-yes">Yes</option>
-				                        		<option value="bankruptcy-no">No</option>
+				                        		<option value="default">Please select an option</option>
+				                        		<option id="bankruptcy_yes" value="bankruptcy_yes">Yes</option>
+				                        		<option value="bankruptcy_no">No</option>
 				                        	</select>
 				                        	</p>
 				                        </div>
@@ -576,30 +578,43 @@
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<p>
-				                        	<label class="sr-only" for="employees">Number of Employees</label>
-				                        	<input type="text" name="employees" placeholder="Number of employees..." class="employees form-control" id="employees">
+				                    		<p>Number of Employees:</p>
+				                    		<p>
+				                        	<select name="employees">
+				                        		<option id="cc_employees" value="default">Please select an option</option>
+				                        		<option value="1-5">1-5</option>
+				                        		<option value="6-10">6-10</option>
+				                        		<option value="11-above">11+</option>
+				                        	</select>
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<p>
-				                        	<label class="sr-only" for="sales">Annual Sales</label>
-				                        	<input type="text" name="sales" placeholder="Annual Sales..." class="sales form-control" id="sales">
+				                    		<p>Annual Sales:</p>
+				                    		<p>
+				                        	<select name="sales">
+				                        		<option id="cc_sales" value="default">Please select an option</option>
+				                        		<option value="1-10">1k-10k</option>
+				                        		<option value="10-30">10k-30k</option>
+				                        		<option value="30-50">30k-50k</option>
+				                        		<option value="50-100">50k-100k</option>
+				                        		<option value="100-above">100k+</option>
+				                        	</select>
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
 				                        	<p>Do you have a website?</p>
 				                        	<p>
 				                        	<select id="website" name="website">
-				                        		<option id="website-yes" value="website-yes">Yes</option>
-				                        		<option value="website-no">No</option>
+				                        		<option value="default">Please select an option</option>
+				                        		<option id="cc_website_yes" value="cc_website_yes">Yes</option>
+				                        		<option value="cc_website_no">No</option>
 				                        	</select>
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
 				                        	<p>
-				                        	<label class="sr-only" for="url">URL</label>
-				                        	<input type="url" name="url" placeholder="If yes, list URL..." class="url form-control" id="url">
+				                        	<label class="sr-only" for="cc_url">URL</label>
+				                        	<input type="text" name="cc_url" placeholder="If yes, list URL..." class="cc_url form-control" id="cc_url">
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
@@ -680,7 +695,7 @@
 				                        <div class="form-group">
 				                        	<p>
 				                        	<select id="cod_country" name="cod_country">
-				                        		<option id="cod_country_select" value="cod_country_select">Please select a country</option>
+				                        		<option id="cod_country_select" value="cod_country_select">Please select an option</option>
 					                        	<option value="AFG">Afghanistan</option>
 																		<option value="ALA">Åland Islands</option>
 																		<option value="ALB">Albania</option>
@@ -937,7 +952,7 @@
 				                        <div class="form-group cod_state_form">
 				                        	<p>
 				                        	<select id="cod_state" name="cod_state">
-				                        		<option id= "cod_state_select" value="cod_state_select">Please select a state</option>
+				                        		<option id= "cod_state_select" value="cod_state_select">Please select an option</option>
 				                        		<option value="AL">Alabama</option>
 																		<option value="AK">Alaska</option>
 																		<option value="AZ">Arizona</option>
@@ -1033,7 +1048,8 @@
 				                    	<div class="form-group">
 				                    		<p>Ownership:</p>
 				                    		<p>
-				                        	<select name="cod_form-ownership">
+				                        	<select name="cod_ownership">
+				                        		<option id="cod_ownership" value="default">Please select an option</option>
 				                        		<option value="sole-proprietorship">Sole Proprietorship</option>
 				                        		<option value="partnership">Partnership</option>
 				                        		<option value="corporation">Corporation</option>
@@ -1069,8 +1085,9 @@
 				                        	<p>Has the firm or any of its principles filed for bankruptcy?</p>
 				                        	<p>
 				                        	<select id="cod_bankruptcy" name="cod_bankruptcy">
-				                        		<option id="cod_bankruptcy-yes" value="bankruptcy-yes">Yes</option>
-				                        		<option value="cod_bankruptcy-no">No</option>
+				                        		<option value="default">Please select an option</option>
+				                        		<option id="cod_bankruptcy_yes" value="cod_bankruptcy_yes">Yes</option>
+				                        		<option value="cod_bankruptcy_no">No</option>
 				                        	</select>
 				                        	</p>
 				                        </div>
@@ -1081,22 +1098,35 @@
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<p>
-				                        	<label class="sr-only" for="cod_employees">Number of Employees</label>
-				                        	<input type="text" name="cod_employees" placeholder="Number of employees..." class="cod_employees form-control" id="cod_employees">
+				                    		<p>Number of Employees:</p>
+				                    		<p>
+				                        	<select name="cod_employees">
+				                        		<option id="cod_employees" value="default">Please select an option</option>
+				                        		<option value="1-5">1-5</option>
+				                        		<option value="6-10">6-10</option>
+				                        		<option value="11-above">11+</option>
+				                        	</select>
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<p>
-				                        	<label class="sr-only" for="cod_sales">Annual Sales</label>
-				                        	<input type="text" name="cod_sales" placeholder="Annual Sales..." class="cod_sales form-control" id="cod_sales">
+				                    		<p>Annual Sales:</p>
+				                    		<p>
+				                        	<select name="cod_sales">
+				                        		<option id="cod_sales" value="default">Please select an option</option>
+				                        		<option value="1-10">1k-10k</option>
+				                        		<option value="10-30">10k-30k</option>
+				                        		<option value="30-50">30k-50k</option>
+				                        		<option value="50-100">50k-100k</option>
+				                        		<option value="100-above">100k+</option>
+				                        	</select>
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
 				                        	<p>Do you have a website?</p>
 				                        	<p>
 				                        	<select id="cod_website" name="cod_website">
-				                        		<option id="cod_website-yes" value="website-yes">Yes</option>
+				                        		<option value="default">Please select an option</option>
+				                        		<option id="cod_website_yes" value="cod_website_yes">Yes</option>
 				                        		<option value="cod_website-no">No</option>
 				                        	</select>
 				                        	</p>
@@ -1104,7 +1134,7 @@
 				                        <div class="form-group">
 				                        	<p>
 				                        	<label class="sr-only" for="cod_url">URL</label>
-				                        	<input type="url" name="cod_url" placeholder="If yes, list URL..." class="cod_url form-control" id="cod_url">
+				                        	<input type="text" name="cod_url" placeholder="If yes, list URL..." class="cod_url form-control" id="cod_url">
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
@@ -1148,7 +1178,8 @@
 		                            	<div class="form-group">
 					                    		<p>Account Type:</p>
 					                    		<p>
-				                        	<select name="cod_account_type">
+				                        	<select name="cod_acct_type">
+				                        		<option id="cod_acct_type" value="default">Please select an option</option>
 				                        		<option value="checking">Checking</option>
 				                        		<option value="savings">Savings</option>
 				                        		<option value="loan">Loan</option>
@@ -1180,7 +1211,7 @@
 				                        <div class="form-group cod_state_form2">
 				                        	<p>
 				                        	<select id="cod_state2" name="cod_state2">
-				                        		<option id= "cod_state_select2" value="cod_state_select2">Please select a state</option>
+				                        		<option id= "cod_state_select2" value="cod_state_select2">Please select an option</option>
 				                        		<option value="AL">Alabama</option>
 																		<option value="AK">Alaska</option>
 																		<option value="AZ">Arizona</option>
@@ -1316,7 +1347,7 @@
 				                        <div class="form-group">
 				                        	<p>
 				                        	<select id="net_country" name="net_country">
-				                        		<option id="net_country_select" value="net_country_select">Please select a country</option>
+				                        		<option id="net_country_select" value="net_country_select">Please select an option</option>
 					                        	<option value="AFG">Afghanistan</option>
 																		<option value="ALA">Åland Islands</option>
 																		<option value="ALB">Albania</option>
@@ -1573,7 +1604,7 @@
 				                        <div class="form-group net_state_form">
 				                        	<p>
 				                        	<select id="net_state" name="net_state">
-				                        		<option id= "net_state_select" value="net_state_select">Please select a state</option>
+				                        		<option id= "net_state_select" value="net_state_select">Please select an option</option>
 				                        		<option value="AL">Alabama</option>
 																		<option value="AK">Alaska</option>
 																		<option value="AZ">Arizona</option>
@@ -1669,7 +1700,8 @@
 				                    	<div class="form-group">
 				                    		<p>Ownership:</p>
 				                    		<p>
-				                        	<select name="net_form-ownership">
+				                        	<select name="net_ownership">
+				                        		<option id="net_ownership" value="default">Please select an option</option>
 				                        		<option value="sole-proprietorship">Sole Proprietorship</option>
 				                        		<option value="partnership">Partnership</option>
 				                        		<option value="corporation">Corporation</option>
@@ -1705,8 +1737,9 @@
 				                        	<p>Has the firm or any of its principles filed for bankruptcy?</p>
 				                        	<p>
 				                        	<select id="net_bankruptcy" name="net_bankruptcy">
-				                        		<option id="net_bankruptcy-yes" value="bankruptcy-yes">Yes</option>
-				                        		<option value="net_bankruptcy-no">No</option>
+				                        		<option value="default">Please select an option</option>
+				                        		<option id="net_bankruptcy_yes" value="net_bankruptcy_yes">Yes</option>
+				                        		<option value="net_bankruptcy_no">No</option>
 				                        	</select>
 				                        	</p>
 				                        </div>
@@ -1717,30 +1750,43 @@
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<p>
-				                        	<label class="sr-only" for="net_employees">Number of Employees</label>
-				                        	<input type="text" name="net_employees" placeholder="Number of employees..." class="net_employees form-control" id="net_employees">
+				                    		<p>Number of Employees:</p>
+				                    		<p>
+				                        	<select name="net_employees">
+				                        		<option id="net_employees" value="default">Please select an option</option>
+				                        		<option value="1-5">1-5</option>
+				                        		<option value="6-10">6-10</option>
+				                        		<option value="11-above">11+</option>
+				                        	</select>
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
-				                        	<p>
-				                        	<label class="sr-only" for="net_sales">Annual Sales</label>
-				                        	<input type="text" name="net_sales" placeholder="Annual Sales..." class="net_sales form-control" id="net_sales">
+				                    		<p>Annual Sales:</p>
+				                    		<p>
+				                        	<select name="net_sales">
+				                        		<option id="net_sales" value="default">Please select an option</option>
+				                        		<option value="1-10">1k-10k</option>
+				                        		<option value="10-30">10k-30k</option>
+				                        		<option value="30-50">30k-50k</option>
+				                        		<option value="50-100">50k-100k</option>
+				                        		<option value="100-above">100k+</option>
+				                        	</select>
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
 				                        	<p>Do you have a website?</p>
 				                        	<p>
 				                        	<select id="net_website" name="net_website">
-				                        		<option id="net_website-yes" value="website-yes">Yes</option>
-				                        		<option value="website-no">No</option>
+				                        		<option value="default">Please select an option</option>
+				                        		<option id="net_website_yes" value="net_website_yes">Yes</option>
+				                        		<option value="net_website_no">No</option>
 				                        	</select>
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
 				                        	<p>
 				                        	<label class="sr-only" for="net_url">URL</label>
-				                        	<input type="url" name="net_url" placeholder="If yes, list URL..." class="net_url form-control" id="net_url">
+				                        	<input type="text" name="net_url" placeholder="If yes, list URL..." class="net_url form-control" id="net_url">
 				                        	</p>
 				                        </div>
 				                        <div class="form-group">
@@ -2021,6 +2067,7 @@
 					                    		<p>Account Type:</p>
 					                    		<p>
 				                        	<select name="net_acct_type3">
+				                        		<option id="net_acct_type3" value="default">Please select an option</option>
 				                        		<option value="checking">Checking</option>
 				                        		<option value="savings">Savings</option>
 				                        		<option value="loan">Loan</option>
@@ -2052,7 +2099,7 @@
 				                        <div class="form-group">
 				                        	<p>
 				                        	<select id="net_state3" name="net_state3">
-				                        		<option id= "net_state_select3" value="net_state_select3">Please select a state</option>
+				                        		<option id= "net_state_select3" value="net_state_select3">Please select an option</option>
 				                        		<option value="AL">Alabama</option>
 																		<option value="AK">Alaska</option>
 																		<option value="AZ">Arizona</option>
@@ -2136,10 +2183,13 @@
 				                        	</p>
 				                        </div>
 
+				                        <br /><br />
+
 				                        <div class="form-group">
 					                    		<p>Account Type:</p>
 					                    		<p>
 				                        	<select name="net_acct_type4">
+				                        		<option id="net_acct_type4" value="default">Please select an option</option>
 				                        		<option value="checking">Checking</option>
 				                        		<option value="savings">Savings</option>
 				                        		<option value="loan">Loan</option>
@@ -2171,7 +2221,7 @@
 				                        <div class="form-group">
 				                        	<p>
 				                        	<select id="net_state4" name="net_state4">
-				                        		<option id= "net_state_select4" value="net_state_select4">Please select a state</option>
+				                        		<option id= "net_state_select4" value="net_state_select4">Please select an option</option>
 				                        		<option value="AL">Alabama</option>
 																		<option value="AK">Alaska</option>
 																		<option value="AZ">Arizona</option>
